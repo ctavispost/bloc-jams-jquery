@@ -5,7 +5,8 @@ class Helper {
 
     //sets total-time to song length
     const songLength = player.currentlyPlaying.duration;
-    $('#time-control .total-time').text( songLength );
+    const totalTime = player.prettyTime(songLength);
+    $('#time-control .total-time').text( totalTime );
   }
 }
 

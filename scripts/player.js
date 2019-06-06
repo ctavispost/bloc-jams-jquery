@@ -14,14 +14,18 @@ class Player {
     return this.soundObject.getTime();
   }
 
-  /*prettyTime (totalSeconds) {
-    const timeInMinutes = (totalSeconds / 60);
+  prettyTime (timeInSeconds) {
+    const timeInMinutes = (timeInSeconds / 60);
     const minutes = Math.floor(timeInMinutes);
-    const secondsAndMillisec = (totalSeconds % 60);
+    const secondsAndMillisec = (timeInSeconds % 60);
     const seconds = Math.floor(secondsAndMillisec);
 
+    if (seconds < 10) {
+      return minutes + ":0" + seconds;
+    }
+
     return minutes + ":" + seconds;
-  }*/
+  }
 
   playPause (song = this.currentlyPlaying) {
     if (this.currentlyPlaying !== song) {
