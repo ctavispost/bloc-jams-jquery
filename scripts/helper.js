@@ -4,7 +4,7 @@ class Helper {
     player.playPause(song);
 
     //sets total-time to song length
-    const songLength = player.getDuration();
+    const songLength = player.currentlyPlaying.duration;
     $('#time-control .total-time').text( songLength );
   }
 }
